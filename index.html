@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verónica Veneroso | Escritora</title>
+    
+    <!-- Google Fonts: Dancing Script (cursiva), Playfair Display (serif), Plus Jakarta Sans (sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Palette based strictly on specifications */
+            --color-bg: #EEC8E0;         /* Fondo: Rosa suave Y2K */
+            --color-primary: #D65780;    /* Color principal: Rosa magenta */
+            --color-secondary: #99DDC8;  /* Color secundario: Menta */
+            --color-text-dark: #2B121E;  /* Texto oscuro para contraste */
+            --color-text-light: #FFFFFF; /* Texto blanco brillante */
+            --color-card-bg: rgba(255, 255, 255, 0.65);
+            
+            /* Fonts */
+            --font-cursive: 'Dancing Script', cursive;
+            --font-title: 'Playfair Display', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            
+            /* Visual Effects */
+            --gradient-chrome: linear-gradient(135deg, #FFFFFF 0%, #99DDC8 50%, #D65780 100%);
+            --shadow-y2k: 0 8px 20px rgba(43, 18, 30, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
+            --shadow-glow: 0 0 18px rgba(214, 87, 128, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            background-image: 
+                radial-gradient(circle at 10% 15%, rgba(255, 255, 255, 0.6) 0%, transparent 35%),
+                radial-gradient(circle at 90% 85%, rgba(153, 221, 200, 0.45) 0%, transparent 40%);
+            color: var(--color-text-dark);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            padding: 3rem 1.5rem 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-pic-wrapper {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1.2rem;
+            border-radius: 50%;
+            padding: 5px;
+            background: var(--gradient-chrome);
+            box-shadow: var(--shadow-y2k), var(--shadow-glow);
+            animation: pulseGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 15px rgba(214, 87, 128, 0.3); }
+            100% { box-shadow: 0 0 25px rgba(153, 221, 200, 0.8); }
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+            border: 3px solid #ffffff;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+        }
+
+        .site-title {
+            font-family: var(--font-cursive);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-shadow: 2px 2px 0px #ffffff, 0 0 12px rgba(214, 87, 128, 0.2);
+            line-height: 1.1;
+            margin-bottom: 0.3rem;
+        }
+
+        .site-subtitle {
+            font-family: var(--font-title);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--color-primary);
+            font-weight: 600;
+            display: block;
+            margin-top: 0.2rem;
+            opacity: 0.9;
+        }
+
+        .tabs-container {
+            max-width: 800px;
+            margin: 1.5rem auto 0;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.7);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            font-family: var(--font-title);
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 0.7rem 1.4rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--shadow-y2k);
+            outline: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            background: var(--color-secondary);
+            color: var(--color-text-dark);
+            border-color: #ffffff;
+        }
+
+        .tab-btn.active {
+            background: var(--color-primary);
+            color: var(--color-text-light);
+            border-color: #ffffff;
+            box-shadow: 0 0 15px rgba(214, 87, 128, 0.5), var(--shadow-y2k);
+            transform: translateY(-2px);
+        }
+
+        main {
+            max-width: 850px;
+            width: 100%;
+            margin: 2rem auto 3rem;
+            padding: 0 1.5rem;
+            flex-grow: 1;
+        }
+
+        .tab-content {
+            display: none;
+            background: var(--color-card-bg);
+            backdrop-filter: blur(10px);
+            border: 2px solid #ffffff;
+            border-radius: 24px;
+            padding: 2.2rem;
+            box-shadow: var(--shadow-y2k);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeInTab 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInTab {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tab-content::before {
+            content: '✨';
+            position: absolute;
+            top: 15px;
+            right: 18px;
+            font-size: 1.3rem;
+            opacity: 0.8;
+        }
+
+        .section-title {
+            font-family: var(--font-title);
+            font-size: 1.9rem;
+            color: var(--color-primary);
+            margin-bottom: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px dashed rgba(214, 87, 128, 0.3);
+            padding-bottom: 0.6rem;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            border-radius: 18px;
+            overflow: hidden;
+            margin: 1.8rem 0 0.5rem;
+            border: 3px solid #ffffff;
+            box-shadow: var(--shadow-y2k);
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            width: 33.333%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: var(--font-title);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-slide:nth-child(1) { background: linear-gradient(135deg, #D65780, #EEC8E0); color: #ffffff; }
+        .carousel-slide:nth-child(2) { background: linear-gradient(135deg, #99DDC8, #ffffff); color: var(--color-text-dark); }
+        .carousel-slide:nth-child(3) { background: linear-gradient(135deg, #D65780, #99DDC8); color: #ffffff; }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ffffff;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: var(--shadow-y2k);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+        }
+
+        .carousel-btn:hover {
+            transform: translateY(-50%) scale(1.15);
+            background: var(--color-secondary);
+            color: var(--color-text-dark);
+            border-color: #ffffff;
+        }
+
+        .carousel-btn.prev { left: 12px; }
+        .carousel-btn.next { right: 12px; }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--color-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: var(--color-secondary);
+            transform: scale(1.3);
+            border-color: #ffffff;
+            box-shadow: 0 0 8px var(--color-secondary);
+        }
+
+        .text-box {
+            font-size: 1.15rem;
+            color: var(--color-text-dark);
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .badge-info {
+            background: rgba(153, 221, 200, 0.4);
+            border: 2px solid var(--color-secondary);
+            color: var(--color-text-dark);
+            padding: 1.1rem;
+            border-radius: 16px;
+            font-size: 1.02rem;
+            font-weight: 500;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            border: 2px solid #ffffff;
+            border-radius: 18px;
+            padding: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            box-shadow: var(--shadow-y2k);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(214, 87, 128, 0.25);
+            border-color: var(--color-secondary);
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-family: var(--font-title);
+            font-size: 1.2rem;
+            border: 2px solid #ffffff;
+            box-shadow: inset 0 0 12px rgba(0,0,0,0.1);
+        }
+
+        .card-title {
+            font-family: var(--font-title);
+            font-size: 1.3rem;
+            color: var(--color-primary);
+        }
+
+        .card-desc {
+            font-size: 0.98rem;
+            color: var(--color-text-dark);
+            opacity: 0.9;
+        }
+
+        .btn-instagram {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--gradient-chrome);
+            color: var(--color-text-dark);
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: var(--shadow-y2k), var(--shadow-glow);
+            border: 2px solid #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .btn-instagram:hover {
+            transform: scale(1.06) translateY(-2px);
+            box-shadow: 0 0 22px rgba(153, 221, 200, 0.9), var(--shadow-y2k);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #ffffff;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: var(--shadow-y2k);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 900;
+            outline: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            background: var(--color-secondary);
+            color: var(--color-text-dark);
+            border-color: #ffffff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        /* Mobile adaptivity */
+        @media (max-width: 600px) {
+            .site-title { font-size: 2.8rem; }
+            .site-subtitle { font-size: 1rem; letter-spacing: 3px; }
+            .carousel-container { height: 210px; }
+            .tab-content { padding: 1.5rem; }
+            .tab-btn { font-size: 0.95rem; padding: 0.6rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="profile-pic-wrapper">
+            <div class="profile-pic">Foto de Perfil</div>
+        </div>
+        <h1 class="site-title">Verónica Veneroso</h1>
+        <span class="site-subtitle">Escritora</span>
+
+        <nav class="tabs-container" role="tablist">
+            <button class="tab-btn active" data-tab="presentacion" role="tab">✦ Presentación</button>
+            <button class="tab-btn" data-tab="proyectos" role="tab">✦ Proyectos</button>
+            <button class="tab-btn" data-tab="blog" role="tab">✦ Entradas del blog</button>
+            <button class="tab-btn" data-tab="contacto" role="tab">✦ Contacto</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección 1: Presentación -->
+        <section class="tab-content active" id="presentacion" role="tabpanel">
+            <h2 class="section-title">✦ Presentación</h2>
+            <p class="text-box">
+                Escribo poesía, cuentos, novelas. Amante de los libros. Me interesa el arte en sus múltiples expresiones.
+            </p>
+            <div class="badge-info">
+                <span>🎓</span>
+                <div>
+                    Licenciada y profesora de psicología y psicopedagoga. Docente de Nivel Superior.
+                </div>
+            </div>
+
+            <!-- Carrusel de imágenes incorporado en presentación -->
+            <div class="carousel-container" id="carousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide">Imagen 1</div>
+                    <div class="carousel-slide">Imagen 2</div>
+                    <div class="carousel-slide">Imagen 3</div>
+                </div>
+                <button class="carousel-btn prev" id="prevBtn" aria-label="Imagen anterior">❮</button>
+                <button class="carousel-btn next" id="nextBtn" aria-label="Imagen siguiente">❯</button>
+                <div class="carousel-indicators" id="indicators">
+                    <span class="indicator active" data-index="0"></span>
+                    <span class="indicator" data-index="1"></span>
+                    <span class="indicator" data-index="2"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Proyectos -->
+        <section class="tab-content" id="proyectos" role="tabpanel">
+            <h2 class="section-title">✦ Proyectos</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="card-img-placeholder">Imagen 4</div>
+                    <h3 class="card-title">Poesía & Escritos</h3>
+                    <p class="card-desc">Colección de versos y metáforas en constante exploración artística.</p>
+                </div>
+                <div class="card">
+                    <div class="card-img-placeholder">Imagen 5</div>
+                    <h3 class="card-title">Narrativa Corta</h3>
+                    <p class="card-desc">Cuentos que indagan en la psicología de los personajes y sus contextos.</p>
+                </div>
+                <div class="card">
+                    <div class="card-img-placeholder">Imagen 6</div>
+                    <h3 class="card-title">Proyectos Novelescos</h3>
+                    <p class="card-desc">Obras de mayor aliento que entrelazan arte, educación y emociones.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Entradas del blog -->
+        <section class="tab-content" id="blog" role="tabpanel">
+            <h2 class="section-title">✦ Entradas del blog</h2>
+            <div class="grid-cards">
+                <article class="card">
+                    <div class="card-img-placeholder">Imagen 7</div>
+                    <h3 class="card-title">Reflexiones sobre el Arte y la Psique</h3>
+                    <p class="card-desc">Un recorrido por el cruce entre la escritura sensible y la práctica docente.</p>
+                </article>
+                <article class="card">
+                    <div class="card-img-placeholder">Imagen 8</div>
+                    <h3 class="card-title">Notas de Lectura</h3>
+                    <p class="card-desc">Reseñas breves e impresiones sobre libros que dejan huella.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección 4: Contacto -->
+        <section class="tab-content" id="contacto" role="tabpanel" style="text-align: center;">
+            <h2 class="section-title" style="justify-content: center;">✦ Contacto</h2>
+            <p class="text-box">
+                ¿Te gustaría ponerte en contacto o seguir mis publicaciones diarias? Encuéntrame en Instagram:
+            </p>
+            <a href="https://www.instagram.com/veroescritora?stkn=MW42azI4N2lwYmQ1aA==" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+                📸 @veroescritora
+            </a>
+        </section>
+    </main>
+
+    <button class="back-to-top" id="backToTopBtn" aria-label="Volver arriba">↑</button>
+
+    <footer>
+        <p>© Verónica Veneroso — Escritora</p>
+    </footer>
+
+    <script>
+        // Navegación por Pestañas (Tabbed Navigation)
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.getAttribute('data-tab');
+
+                // Toggle active buttons
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Toggle active tab view
+                tabContents.forEach(content => {
+                    if (content.id === targetTab) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Carrusel de Imágenes
+        const track = document.getElementById('carouselTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentIndex = 0;
+        const totalSlides = 3;
+        let slideInterval;
+
+        function updateCarousel(index) {
+            currentIndex = index;
+            track.style.transform = `translateX(-${currentIndex * 33.333}%)`;
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        function nextSlide() {
+            const newIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel(newIndex);
+        }
+
+        function prevSlide() {
+            const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel(newIndex);
+        }
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetInterval();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetInterval();
+        });
+
+        indicators.forEach(ind => {
+            ind.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                updateCarousel(index);
+                resetInterval();
+            });
+        });
+
+        function startInterval() {
+            slideInterval = setInterval(nextSlide, 3500);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+        }
+
+        startInterval();
+
+        // Botón volver arriba
+        const backToTopBtn = document.getElementById('backToTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 180) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
