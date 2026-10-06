@@ -477,102 +477,39 @@
             <img src="img/perfil.jpg" alt="Foto de perfil de Verónica Veneroso" class="profile-pic" onerror="this.onerror=null; this.src='https://placehold.co/150x150/D65780/ffffff?text=Foto+de+Perfil';">
         </div>
 
-        <nav class="tabs-container" role="tablist">
-            <button class="tab-btn active" data-tab="presentacion" role="tab">✦ Presentación</button>
-            <button class="tab-btn" data-tab="proyectos" role="tab">✦ Proyectos</button>
-            <button class="tab-btn" data-tab="blog" role="tab">✦ Entradas del blog</button>
-            <button class="tab-btn" data-tab="contacto" role="tab">✦ Contacto</button>
+        <nav class="tabs-container">
+            <a href="index.html" class="tab-btn active" style="text-decoration: none;">← Volver al Inicio</a>
         </nav>
     </header>
 
     <main>
-        <!-- Sección 1: Presentación -->
-        <section class="tab-content active" id="presentacion" role="tabpanel">
-            <h2 class="section-title">✦ Presentación</h2>
-            <p class="text-box">
-                Escribo desde que tengo memoria poesía y ficción. Amante de los libros. Las letras son una parte inherente a mí. Son una vía para plasmar ideas, contar historias y transmitir emociones. Me interesa el arte en sus múltiples expresiones. Estudié teatro y comedia musical. Actualmente estoy incursionando con el piano, ¡y me encanta!
-            </p>
-            <div class="badge-info">
-                <span>🎓</span>
-                <div>
-                    <strong>Sobre mí:</strong> Licenciada y profesora de psicología y psicopedagoga. Docente de Nivel Superior.
-                </div>
-            </div>
-
-            <!-- Carrusel de imágenes incorporado en presentación -->
-            <div class="carousel-container" id="carousel">
-                <div class="carousel-track" id="carouselTrack">
-                    <div class="carousel-slide">
-                        <img src="img/imagen-1.jpg" alt="Imagen 1" class="carousel-img" onerror="this.onerror=null; this.src='https://placehold.co/600x260/D65780/ffffff?text=Imagen+1';">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="img/imagen-2.jpg" alt="Imagen 2" class="carousel-img" onerror="this.onerror=null; this.src='https://placehold.co/600x260/99DDC8/2B121E?text=Imagen+2';">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="img/imagen-3.jpg" alt="Imagen 3" class="carousel-img" onerror="this.onerror=null; this.src='https://placehold.co/600x260/D65780/ffffff?text=Imagen+3';">
-                    </div>
-                </div>
-                <button class="carousel-btn prev" id="prevBtn" aria-label="Imagen anterior">❮</button>
-                <button class="carousel-btn next" id="nextBtn" aria-label="Imagen siguiente">❯</button>
-                <div class="carousel-indicators" id="indicators">
-                    <span class="indicator active" data-index="0"></span>
-                    <span class="indicator" data-index="1"></span>
-                    <span class="indicator" data-index="2"></span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección 2: Proyectos -->
-        <section class="tab-content" id="proyectos" role="tabpanel">
-            <h2 class="section-title">✦ Proyectos</h2>
+        <section class="tab-content active" style="display: block;">
+            <h2 class="section-title">✦ Proyecto Novela Privacidad</h2>
+            <p class="text-box">Detalles exclusivos, sinopsis y avances de esta nueva obra.</p>
+            
             <div class="grid-cards">
                 <div class="card">
-                    <img src="img/imagen-4.jpg" alt="Poesía" class="card-img" onerror="this.onerror=null; this.src='https://placehold.co/300x140/D65780/ffffff?text=Imagen+4';">
-                    <h3 class="card-title">Poesía</h3>
-                    <p class="card-desc">Colección de versos y metáforas en constante exploración artística.</p>
-                    <a href="poesias.html" class="btn-instagram" style="padding: 0.6rem 1.2rem; font-size: 0.95rem; margin-top: auto; text-align: center;">Ver más</a>
+                    <h3 class="card-title">Prefacio</h3>
+                    <p class="card-desc" style="font-family: var(--font-body); line-height: 1.8; margin-top: 10px;">
+                        Aquí puedes escribir el prefacio o introducción de la novela.<br>
+                        Contexto de la obra.
+                    </p>
                 </div>
                 <div class="card">
-                    <img src="img/imagen-5.jpg" alt="Cuentos" class="card-img" onerror="this.onerror=null; this.src='https://placehold.co/300x140/99DDC8/2B121E?text=Imagen+5';">
-                    <h3 class="card-title">Cuentos</h3>
-                    <p class="card-desc">Cuentos que indagan en la psicología de los personajes y sus contextos.</p>
-                    <a href="cuentos.html" class="btn-instagram" style="padding: 0.6rem 1.2rem; font-size: 0.95rem; margin-top: auto; text-align: center;">Ver más</a>
+                    <h3 class="card-title">Sinopsis</h3>
+                    <p class="card-desc" style="font-family: var(--font-body); line-height: 1.8; margin-top: 10px;">
+                        Aquí va la sinopsis oficial de la novela.<br>
+                        ¿De qué trata la historia? ¿Quiénes son los protagonistas?
+                    </p>
                 </div>
                 <div class="card">
-                    <img src="img/imagen-6.jpg" alt="Proyecto Novela Privacidad" class="card-img" onerror="this.onerror=null; this.src='https://placehold.co/300x140/D65780/ffffff?text=Imagen+6';">
-                    <h3 class="card-title">Proyecto Novela Privacidad</h3>
-                    <p class="card-desc">Obras de mayor aliento que entrelazan arte, educación y emociones.</p>
-                    <a href="novela.html" class="btn-instagram" style="padding: 0.6rem 1.2rem; font-size: 0.95rem; margin-top: auto; text-align: center;">Ver más</a>
+                    <h3 class="card-title">Avances</h3>
+                    <p class="card-desc" style="font-family: var(--font-body); line-height: 1.8; margin-top: 10px;">
+                        Capítulos de muestra, fragmentos, o actualizaciones del progreso.<br>
+                        Material exclusivo.
+                    </p>
                 </div>
             </div>
-        </section>
-
-        <!-- Sección 3: Entradas del blog -->
-        <section class="tab-content" id="blog" role="tabpanel">
-            <h2 class="section-title">✦ Entradas del blog</h2>
-            <div class="grid-cards">
-                <article class="card">
-                    <img src="img/imagen-7.jpg" alt="Reflexiones sobre el Arte y la Psique" class="card-img" onerror="this.onerror=null; this.src='https://placehold.co/300x140/99DDC8/2B121E?text=Imagen+7';">
-                    <h3 class="card-title">Reflexiones sobre el Arte y la Psique</h3>
-                    <p class="card-desc">Un recorrido por el cruce entre la escritura sensible y la práctica docente.</p>
-                </article>
-                <article class="card">
-                    <img src="img/imagen-8.jpg" alt="Notas de Lectura" class="card-img" onerror="this.onerror=null; this.src='https://placehold.co/300x140/D65780/ffffff?text=Imagen+8';">
-                    <h3 class="card-title">Notas de Lectura</h3>
-                    <p class="card-desc">Reseñas breves e impresiones sobre libros que dejan huella.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Sección 4: Contacto -->
-        <section class="tab-content" id="contacto" role="tabpanel" style="text-align: center;">
-            <h2 class="section-title" style="justify-content: center;">✦ Contacto</h2>
-            <p class="text-box">
-                ¿Te gustaría ponerte en contacto o seguir mis publicaciones diarias? Encuéntrame en Instagram:
-            </p>
-            <a href="https://www.instagram.com/veroescritora?stkn=MW42azI4N2lwYmQ1aA==" target="_blank" rel="noopener noreferrer" class="btn-instagram">
-                📸 @veroescritora
-            </a>
         </section>
     </main>
 
@@ -582,103 +519,6 @@
         <p>© Verónica Veneroso — Escritora</p>
     </footer>
 
-    <script>
-        // Navegación por Pestañas (Tabbed Navigation)
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
 
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const targetTab = btn.getAttribute('data-tab');
-
-                // Toggle active buttons
-                tabBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                // Toggle active tab view
-                tabContents.forEach(content => {
-                    if (content.id === targetTab) {
-                        content.classList.add('active');
-                    } else {
-                        content.classList.remove('active');
-                    }
-                });
-            });
-        });
-
-        // Carrusel de Imágenes
-        const track = document.getElementById('carouselTrack');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const indicators = document.querySelectorAll('.indicator');
-        let currentIndex = 0;
-        const totalSlides = 3;
-        let slideInterval;
-
-        function updateCarousel(index) {
-            currentIndex = index;
-            track.style.transform = `translateX(-${currentIndex * 33.333}%)`;
-            indicators.forEach((ind, i) => {
-                ind.classList.toggle('active', i === currentIndex);
-            });
-        }
-
-        function nextSlide() {
-            const newIndex = (currentIndex + 1) % totalSlides;
-            updateCarousel(newIndex);
-        }
-
-        function prevSlide() {
-            const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            updateCarousel(newIndex);
-        }
-
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            resetInterval();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            resetInterval();
-        });
-
-        indicators.forEach(ind => {
-            ind.addEventListener('click', (e) => {
-                const index = parseInt(e.target.getAttribute('data-index'));
-                updateCarousel(index);
-                resetInterval();
-            });
-        });
-
-        function startInterval() {
-            slideInterval = setInterval(nextSlide, 3500);
-        }
-
-        function resetInterval() {
-            clearInterval(slideInterval);
-            startInterval();
-        }
-
-        startInterval();
-
-        // Botón volver arriba
-        const backToTopBtn = document.getElementById('backToTopBtn');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 180) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
 </body>
 </html>
